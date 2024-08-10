@@ -9,6 +9,8 @@ jobs: # a basic unit of work in a run
       - run:
           name: Run Unit Tests
           command: xcodebuild test -scheme Cormorant 
+          environment:
+            SWIFT_VERSION: 4.0
 
   build: 
     macos:
@@ -19,6 +21,8 @@ jobs: # a basic unit of work in a run
           # build our application
           name: Build Application
           command: xcodebuild
+          environment:
+            SWIFT_VERSION: 4.0
       - run:
           # compress Xcode's build output so that it can be stored as an artifact
           name: Compress app for storage
